@@ -24,7 +24,7 @@ public class TestBase {
         Holder.auth = AuthorizationService.authByApi();
         Configuration.baseUrl = webDriverConfig.baseUrl();
         Configuration.browser = webDriverConfig.browser();
-        Configuration.browserSize = webDriverConfig.browserVersion();
+        Configuration.browserSize = webDriverConfig.browserSize();
         Configuration.pageLoadStrategy = "eager";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         if (webDriverConfig.isRemote()) {

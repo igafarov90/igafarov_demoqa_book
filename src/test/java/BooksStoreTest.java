@@ -15,10 +15,10 @@ public class BooksStoreTest extends TestBase {
     @Test
     void deleteBookFromProfileTest() {
 
-        step("Добавить книги в профайл пользователя" + auth.getUserId(), () ->
+        step("Добавить книги в профайл пользователя " + auth.getUserId(), () ->
                 TestDataService.addBookForUser());
 
-        step("Открыть брузера на странице profile", () ->
+        step("Открыть брузер на странице profile", () ->
                 open("/profile")
         );
 
@@ -28,7 +28,7 @@ public class BooksStoreTest extends TestBase {
 
         step("Сабмит модального окна с удалением книги", () -> {
             $("#closeSmallModal-ok").click();
-            Selenide.confirm();
+            Selenide.dismiss();
         });
 
         step("Проверить, что таблица пуста", () ->
