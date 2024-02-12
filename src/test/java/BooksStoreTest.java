@@ -26,8 +26,9 @@ public class BooksStoreTest extends TestBase {
         executeJavaScript("$('footer').remove()");
 
 
-        if ($(byTagAndText("p", "Consent")).exists()
-        ) {
+        if ($(byTagAndText("p", "Consent")).exists())
+         {
+            System.out.println("закрыть модалку");
             $(byTagAndText("p", "Consent")).click();
         }
 
