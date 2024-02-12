@@ -3,8 +3,9 @@ import helpers.TestDataService;
 import helpers.WithLogin;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Condition.text;
+import java.time.Duration;
+
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.Holder.*;
@@ -30,8 +31,8 @@ public class BooksStoreTest extends TestBase {
             ) {
                 $(byTagAndText("p", "Consent")).click();
             }
-sleep(6000);
-            $(byTagAndText("button", "Delete All Books")).click();
+//sleep(6000);
+            $(byTagAndText("button", "Delete All Books")).shouldBe(visible, Duration.ofSeconds(6)).click();
         });
 
         step("Сабмит модального окна с удалением книги", () -> {
