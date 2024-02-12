@@ -19,10 +19,10 @@ public class TestBase {
 
     @BeforeAll
     public static void setUp() {
-
+        Configuration.baseUrl = webDriverConfig.baseUrl();
         RestAssured.baseURI = "https://demoqa.com";
         Holder.auth = AuthorizationService.authByApi();
-        Configuration.baseUrl = webDriverConfig.baseUrl();
+
         Configuration.browser = webDriverConfig.browser();
         Configuration.browserSize = webDriverConfig.browserSize();
         Configuration.pageLoadStrategy = "eager";
