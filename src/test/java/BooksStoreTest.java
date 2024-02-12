@@ -1,9 +1,8 @@
-import com.codeborne.selenide.Selenide;
+
 import helpers.TestDataService;
 import helpers.WithLogin;
 import org.junit.jupiter.api.Test;
 
-import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byTagAndText;
@@ -39,7 +38,6 @@ public class BooksStoreTest extends TestBase {
 
         step("Сабмит модального окна с удалением книги", () -> {
             $("#closeSmallModal-ok").click();
-            Selenide.confirm();
         });
 
         step("Проверить, что таблица пуста", () ->
