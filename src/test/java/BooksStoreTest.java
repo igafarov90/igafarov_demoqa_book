@@ -20,21 +20,20 @@ public class BooksStoreTest extends TestBase {
         step("Добавить книги в профайл пользователя " + auth.getUserId(), () ->
                 TestDataService.addBookForUser());
 
-        step("Открыть брузер на странице profile", () ->
-                open("/profile"));
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+        step("Открыть брузер на странице profile", () -> {
+            open("/profile");
+            executeJavaScript("$('#fixedban').remove()");
+            executeJavaScript("$('footer').remove()");
+        });
 
-
-        if ($(byTagAndText("p", "Consent")).exists())
-         {
-            System.out.println("закрыть модалку");
-            $(byTagAndText("p", "Consent")).click();
-        }
+        step("Закрыть модалку с предупреждением действий на сайте, если она есть ", () -> {
+            if ($(byTagAndText("p", "Consent")).exists()) {
+                System.out.println("закрыть модалку");
+                $(byTagAndText("p", "Consent")).click();
+            }
+        });
 
         step("Кликнуть по кнопке 'delete all books'", () -> {
-
-//sleep(6000);
             $(byTagAndText("button", "Delete All Books")).click();
         });
 
