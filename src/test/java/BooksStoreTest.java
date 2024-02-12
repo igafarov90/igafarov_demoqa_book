@@ -25,12 +25,14 @@ public class BooksStoreTest extends TestBase {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
+
+        if ($(byTagAndText("p", "Consent")).exists()
+        ) {
+            $(byTagAndText("p", "Consent")).click();
+        }
+
         step("Кликнуть по кнопке 'delete all books'", () -> {
 
-            if ($(byTagAndText("p", "Consent")).exists()
-            ) {
-                $(byTagAndText("p", "Consent")).click();
-            }
 //sleep(6000);
             $(byTagAndText("button", "Delete All Books")).shouldBe(visible, Duration.ofSeconds(10)).click();
         });
