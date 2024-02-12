@@ -34,7 +34,7 @@ public class BooksStoreTest extends TestBase {
 
         step("Кликнуть по кнопке 'delete all books'", () -> {
 
-sleep(6000);
+//sleep(6000);
             $(byTagAndText("button", "Delete All Books")).click();
         });
 
