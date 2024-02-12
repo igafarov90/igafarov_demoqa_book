@@ -13,7 +13,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-
 public class TestBase {
     final static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
