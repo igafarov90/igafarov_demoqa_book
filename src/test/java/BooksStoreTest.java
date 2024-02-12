@@ -27,7 +27,7 @@ public class BooksStoreTest extends TestBase {
 
         if ($(byTagAndText("p", "Consent")).exists())
          {
-            //System.out.println("закрыть модалку");
+            System.out.println("закрыть модалку");
             $(byTagAndText("p", "Consent")).click();
         }
 
