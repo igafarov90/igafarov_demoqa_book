@@ -21,14 +21,14 @@ public class BooksStoreTest extends TestBase {
         step("Открыть брузер на странице profile", () ->
                 open("/profile")
         );
-
+        Selenide.dismiss();
         step("Кликнуть по кнопке 'delete all books'", () ->
                 $(byTagAndText("button", "Delete All Books")).click()
         );
 
         step("Сабмит модального окна с удалением книги", () -> {
             $("#closeSmallModal-ok").click();
-            Selenide.dismiss();
+
         });
 
         step("Проверить, что таблица пуста", () ->
