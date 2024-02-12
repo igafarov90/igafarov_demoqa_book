@@ -28,7 +28,7 @@ public class BooksStoreTest extends TestBase {
 
         step("Сабмит модального окна с удалением книги", () -> {
             $("#closeSmallModal-ok").click();
-
+            Selenide.confirm();
         });
 
         step("Проверить, что таблица пуста", () ->
