@@ -33,8 +33,8 @@ public class BooksStoreTest extends TestBase {
 
         step("Кликнуть по кнопке 'delete all books'", () -> {
 
-//sleep(6000);
-            $(byTagAndText("button", "Delete All Books")).shouldBe(visible, Duration.ofSeconds(10)).click();
+sleep(6000);
+            $(byTagAndText("button", "Delete All Books")).click();
         });
 
         step("Сабмит модального окна с удалением книги", () -> {
