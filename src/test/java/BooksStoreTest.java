@@ -30,7 +30,7 @@ public class BooksStoreTest extends TestBase {
             ) {
                 $(byTagAndText("p", "Consent")).click();
             }
-
+sleep(6000);
             $(byTagAndText("button", "Delete All Books")).click();
         });
 
