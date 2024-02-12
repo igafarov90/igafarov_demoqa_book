@@ -23,9 +23,11 @@ public class BooksStoreTest extends TestBase {
                 open("/profile"));
 
         step("Кликнуть по кнопке 'delete all books'", () -> {
+
             if ($(byTagAndText("p", "Consent")).exists()
             ) {
                 $(byTagAndText("p", "Consent")).click();
+
             }
             executeJavaScript("$('#fixedban').remove()");
             executeJavaScript("$('footer').remove()");
