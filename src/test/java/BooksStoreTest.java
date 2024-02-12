@@ -21,16 +21,16 @@ public class BooksStoreTest extends TestBase {
 
         step("Открыть брузер на странице profile", () ->
                 open("/profile"));
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         step("Кликнуть по кнопке 'delete all books'", () -> {
 
             if ($(byTagAndText("p", "Consent")).exists()
             ) {
                 $(byTagAndText("p", "Consent")).click();
-
             }
-            executeJavaScript("$('#fixedban').remove()");
-            executeJavaScript("$('footer').remove()");
+
             $(byTagAndText("button", "Delete All Books")).click();
         });
 
