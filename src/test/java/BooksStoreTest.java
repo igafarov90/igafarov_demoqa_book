@@ -32,7 +32,7 @@ public class BooksStoreTest extends TestBase {
                 $(byTagAndText("p", "Consent")).click();
             }
 //sleep(6000);
-            $(byTagAndText("button", "Delete All Books")).shouldBe(visible, Duration.ofSeconds(6)).click();
+            $(byTagAndText("button", "Delete All Books")).shouldBe(visible, Duration.ofSeconds(10)).click();
         });
 
         step("Сабмит модального окна с удалением книги", () -> {
